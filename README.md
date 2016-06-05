@@ -12,9 +12,7 @@ Note:- After cloning this file .vimrc will be automatically hide for seeing that
 
 In this file I have added some of the basic configuration for vim. Like colour scheme, smart tab, if your delete button is not working in insert mode after adding this file your delete button will work.
 And many more configuration you can checkout .vimrc file I have added comments for better understanding.
-And I have added swapescape file for the user who are using qwerty keyboard if you will add this file to startup application by following process :-
 
-1. Press super key and type startup applications.
-2. Then click on add button then in the command text box you can type 'bash full_path_of_file' then save.
+I have also added the swapescape.sh. If you run this file then your escape and caplock key will be interchanged and when you will exit then it will change to default. Instead of running this code again and again by 'sh swapescape.sh file_name' you can simply do is you can add this line to you .bashrc file alias vim="sh full_file_path/swapescape.sh. Then you can simply type vim and run this file.
 
-Now after that when you will login then your function of capslock and escape key will be interchanged automatically this is can be usefull because we use escape key more times than caplock. 
+Note:- Swapescape.sh is for qwerty keyboard users.
