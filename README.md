@@ -7,9 +7,7 @@ This file is for linux users. First type this below commands in terminal after i
 
 git clone https://github.com/mmkumr/vimrc/
 
-cp vimrc/.vimrc ~/.vimrc
-
-Note:- After cloning this file .vimrc will be automatically hide for seeing that file you can press ctrl + h for showing hidden files
+<q>cp vimrc/vimrc ~/.vimrc && cp vimrc/swapescape.sh ~/.swapescape.sh</q>
 
 In this file I have added some of the basic configuration for vim. Like colour scheme, smart tab, if your delete button is not working in insert mode after adding this file your delete button will work. And many more configuration you can checkout .vimrc file I have added comments for better understanding.
 
