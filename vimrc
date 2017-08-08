@@ -3,22 +3,21 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 Plug 'agude/vim-eldar'
 Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/ervandew/supertab.git'
+Plug 'https://github.com/airblade/vim-gitgutter.git'
+Plug 'https://github.com/vim-syntastic/syntastic.git'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
-if has('syntax')
-        syntax enable             " Turn on syntax highlighting
-        silent! colorscheme eldar " Custom color scheme
-endif
-
+syntax enable             " Turn on syntax highlighting
 "nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 "End nerdtree
 set backspace=indent,eol,start
-set expandtab
+filetype plugin indent on
 set smarttab
-" 1 tab == 4 spaces
 set tabstop=4
-set softtabstop=3
+set shiftwidth=4
 set expandtab
 syntax on
 set ruler
@@ -27,7 +26,7 @@ set number
 set showmatch
 set autoindent
 set wildmode=longest:full,full
-colorscheme eldar
+colorscheme solarized8_dark_flat
 "ignore up down right left keys in insert mode.
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
@@ -40,4 +39,9 @@ noremap <Right> <NOP>
 noremap <Left> <NOP>
 nnoremap j gj
 nnoremap k gk
+map <C-h> <c-w>h
+map <C-j> <c-w>j
+map <C-k> <c-w>k
+map <C-l> <c-w>l
 set directory=$HOME/.vim/swp//
+hi Normal ctermbg=none
