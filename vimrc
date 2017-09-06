@@ -1,9 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+"plug installation manager.
 call plug#begin('~/.vim/plugged')
 Plug 'agude/vim-eldar'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/vim-syntastic/syntastic.git'
 Plug 'lifepillar/vim-solarized8'
@@ -11,6 +11,7 @@ call plug#end()
 syntax enable             " Turn on syntax highlighting
 "nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"For toogle nerdtree with ctrl + n
 map <C-n> :NERDTreeToggle<CR>
 "End nerdtree
 set backspace=indent,eol,start
@@ -26,7 +27,7 @@ set number
 set showmatch
 set autoindent
 set wildmode=longest:full,full
-colorscheme solarized8_dark_flat
+colorscheme solarized8_dark
 "ignore up down right left keys in insert mode.
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
