@@ -1,12 +1,14 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off                 " required
 "plug installation manager.
+"Run :PlugInstall for intalling new package.
 call plug#begin('~/.vim/plugged')
-Plug 'agude/vim-eldar'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
-Plug 'https://github.com/vim-syntastic/syntastic.git'
-Plug 'lifepillar/vim-solarized8'
+Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'https://github.com/ervandew/supertab.git'
+Plug 'https://github.com/2072/PHP-Indenting-for-VIm.git'
+Plug 'shawncplus/phpcomplete.vim'
 call plug#end()
 syntax enable             " Turn on syntax highlighting
 "nerdtree
@@ -14,6 +16,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "For toogle nerdtree with ctrl + n
 map <C-n> :NERDTreeToggle<CR>
 "End nerdtree
+"php indentation
+let g:PHP_default_indenting = 1
 set backspace=indent,eol,start
 filetype plugin indent on
 set smarttab
@@ -27,7 +31,7 @@ set number
 set showmatch
 set autoindent
 set wildmode=longest:full,full
-colorscheme solarized8_dark
+colorscheme Tomorrow-Night-Bright
 "ignore up down right left keys in insert mode.
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
@@ -40,9 +44,20 @@ noremap <Right> <NOP>
 noremap <Left> <NOP>
 nnoremap j gj
 nnoremap k gk
+"maping switching windows
 map <C-h> <c-w>h
 map <C-j> <c-w>j
 map <C-k> <c-w>k
 map <C-l> <c-w>l
+"ctrlP plugin
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP ../'
 set directory=$HOME/.vim/swp//
-hi Normal ctermbg=none
+"For ignoring scheme background.
+hi Normal ctermbg=none 
+"For ignoring vsplit bar colour
+hi vertsplit ctermbg=black ctermfg=black
+"php autocomplete
+au FileType php set omnifunc=phpcomplete#CompletePHP
+"diabling preview window of omnifunc
+set completeopt-=preview
