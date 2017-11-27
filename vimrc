@@ -74,3 +74,5 @@ highlight Search cterm=underline
 "Airline plugin
 let g:airline_theme='simple'
 let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#branch#enabled=1
+
