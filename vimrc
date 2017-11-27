@@ -1,14 +1,17 @@
 set nocompatible              " be iMproved, required
 filetype off                 " required
 "plug installation manager.
-"Run :PlugInstall for intalling new package.
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/2072/PHP-Indenting-for-VIm.git'
-Plug 'shawncplus/phpcomplete.vim'
+Plug 'https://github.com/Shougo/vimproc.vim.git'
+Plug 'https://github.com/Lokaltog/vim-powerline.git'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/majutsushi/tagbar.git'
 call plug#end()
 syntax enable             " Turn on syntax highlighting
 "nerdtree
@@ -31,6 +34,11 @@ set number
 set showmatch
 set autoindent
 set wildmode=longest:full,full
+set copyindent
+set ignorecase
+set smartcase
+set visualbell
+"disabling annoying bell sound
 colorscheme Tomorrow-Night-Bright
 "ignore up down right left keys in insert mode.
 inoremap <Up> <NOP>
@@ -49,6 +57,7 @@ map <C-h> <c-w>h
 map <C-j> <c-w>j
 map <C-k> <c-w>k
 map <C-l> <c-w>l
+imap jj <esc>
 "ctrlP plugin
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP ../'
@@ -61,3 +70,7 @@ hi vertsplit ctermbg=black ctermfg=black
 au FileType php set omnifunc=phpcomplete#CompletePHP
 "diabling preview window of omnifunc
 set completeopt-=preview
+highlight Search cterm=underline
+"Airline plugin
+let g:airline_theme='simple'
+let g:Powerline_symbols = 'fancy'
